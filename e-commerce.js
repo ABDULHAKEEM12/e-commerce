@@ -243,7 +243,7 @@ function renderProperties(productsToRender = products) {
                             ${isInCart ? "✓ Saved" : "Save Property"}
                         </button>
                         <button class="save-btn" onclick="event.stopPropagation(); toggleCart(${product.id})">
-                            <i class="fas fa-heart${isInCart ? " fa-solid" : "-light"}"></i>
+                            <i class="${isInCart ? "fas fa-heart" : "far fa-heart"}"></i>
                         </button>
                     </div>
                 </div>
