@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LuxeHome - Premium Real Estate</title>
+    <link rel="stylesheet" href="e-commerce.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/949c32d03e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <div class="top-bar-left">
+          <span><i class="fas fa-envelope"></i>hello@luxehome.com</span>
+          <span><i class="fas fa-phone"></i>+234 906 866 8036</span>
+        </div>
+        <div class="top-bar-right">
+          <span><i class="fas fa-map-marker-alt"></i>Lagos, Nigeria</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="header">
+      <div class="header-wrapper">
+        <div class="logo">
+          <h1>LuxeHome</h1>
+          <p>Premium Real Estate</p>
+        </div>
+
+        <nav class="navbar">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#properties" class="nav-link">Properties</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search properties..."
+              class="search-input"
+            />
+            <i class="fas fa-search"></i>
+          </div>
+          <button class="cart-btn" id="cartBtn">
+            <i class="fas fa-heart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section / Home -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h2>Find Your Dream Home</h2>
+        <p>Discover premium properties curated for your lifestyle</p>
+        <button class="cta-btn" onclick="scrollToProperties()">
+          Explore Properties
+        </button>
+      </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="properties" class="properties-section">
+      <!-- Filter Section -->
+      <div class="filters-section">
+        <div class="filters-wrapper">
+          <h3>Filter by Category</h3>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">
+              All Properties
+            </button>
+            <button class="filter-btn" data-filter="villa">Villas</button>
+            <button class="filter-btn" data-filter="apartment">
+              Apartments
+            </button>
+            <button class="filter-btn" data-filter="townhouse">
+              Townhouses
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Container -->
+      <main class="container">
+        <div class="properties-grid" id="root"></div>
+
+        <!-- Sidebar Cart -->
+        <aside class="sidebar" id="sidebar">
+          <div class="sidebar-header">
+            <h3>Saved Properties</h3>
+            <button class="close-sidebar" id="closeSidebar">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="cart-items" id="cartItems">
+            <p class="empty-cart">No saved properties yet</p>
+          </div>
+          <div class="cart-footer">
+            <button class="checkout-btn" id="viewAllBtn">View All</button>
+          </div>
+        </aside>
+      </main>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="about-wrapper">
+        <div class="about-content">
+          <h2>About LuxeHome</h2>
+          <p class="about-intro">
+            Welcome to LuxeHome, your premier destination for luxury real estate
+            solutions. With over 15 years of experience in the property market,
+            we specialize in connecting discerning clients with their dream
+            homes.
+          </p>
+
+          <div class="about-grid">
+            <div class="about-card">
+              <i class="fas fa-award"></i>
+              <h3>Award-Winning</h3>
+              <p>
+                Recognized for excellence in real estate services and customer
+                satisfaction.
+              </p>
+            </div>
+            <div class="about-card">
+              <i class="fas fa-users"></i>
+              <h3>Expert Team</h3>
+              <p>
+                Our dedicated professionals provide personalized guidance
+                throughout your journey.
+              </p>
+            </div>
+            <div class="about-card">
+              <i class="fas fa-globe"></i>
+              <h3>Global Reach</h3>
+              <p>
+                Access to premium properties across multiple countries and
+                exclusive markets.
+              </p>
+            </div>
+            <div class="about-card">
+              <i class="fas fa-lock"></i>
+              <h3>Secure Transactions</h3>
+              <p>
+                Full transparency and secure processes ensuring your peace of
+                mind.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-features">
+            <h3>Why Choose LuxeHome?</h3>
+            <ul class="features-list">
+              <li>
+                <i class="fas fa-check"></i> Curated selection of premium
+                properties
+              </li>
+              <li><i class="fas fa-check"></i> Personal investment advisors</li>
+              <li>
+                <i class="fas fa-check"></i> Transparent pricing and no hidden
+                fees
+              </li>
+              <li><i class="fas fa-check"></i> 24/7 customer support</li>
+              <li>
+                <i class="fas fa-check"></i> Virtual tours and 3D property
+                viewing
+              </li>
+              <li><i class="fas fa-check"></i> Flexible payment options</li>
+            </ul>
+          </div>
+
+          <div class="team-section">
+            <h3>Our Leadership Team</h3>
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="member-avatar">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <h4>Sarah Johnson</h4>
+                <p>Chief Executive Officer</p>
+                <p class="member-bio">
+                  With 20 years in luxury real estate, Sarah leads our vision
+                  for excellence.
+                </p>
+              </div>
+              <div class="team-member">
+                <div class="member-avatar">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <h4>Michael Chen</h4>
+                <p>Chief Operations Officer</p>
+                <p class="member-bio">
+                  Michael ensures seamless operations and client satisfaction
+                  across all markets.
+                </p>
+              </div>
+              <div class="team-member">
+                <div class="member-avatar">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <h4>Emma Williams</h4>
+                <p>Head of Sales</p>
+                <p class="member-bio">
+                  Emma's expertise helps clients find their perfect match in our
+                  portfolio.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-wrapper">
+        <h2>Get In Touch</h2>
+        <p class="contact-intro">
+          Have questions about a property? Want to schedule a viewing? Our team
+          is ready to help you find your dream home.
+        </p>
+
+        <div class="contact-content">
+          <div class="contact-form-wrapper">
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+
+              <div class="form-group">
+                <label for="property">Property of Interest</label>
+                <select id="property" name="property">
+                  <option value="">Select a property</option>
+                  <option value="villa">Villa</option>
+                  <option value="apartment">Apartment</option>
+                  <option value="townhouse">Townhouse</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+
+          <div class="contact-info-wrapper">
+            <div class="contact-info">
+              <h3>Contact Information</h3>
+
+              <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h4>Address</h4>
+                  <p>123 Luxury Avenue<br />Lagos, Nigeria 10001</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h4>Phone</h4>
+                  <p><a href="tel:+2349068668036">+234 906 866 8036</a></p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h4>Email</h4>
+                  <p>
+                    <a href="mailto:hello@luxehome.com">hello@luxehome.com</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <h4>Business Hours</h4>
+                  <p>
+                    Monday - Friday: 9:00 AM - 6:00 PM<br />
+                    Saturday: 10:00 AM - 4:00 PM<br />
+                    Sunday: Closed
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-section">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Property Detail Modal -->
+    <div class="property-modal" id="propertyModal">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="modal-body">
+          <!-- Image Gallery -->
+          <div class="modal-image-section">
+            <div class="main-image-container">
+              <img id="mainImage" src="" alt="Property" class="main-image" />
+              <div class="image-badge" id="imageBadge"></div>
+            </div>
+          </div>
+
+          <!-- Property Details -->
+          <div class="modal-details-section">
+            <div class="property-header">
+              <h2 id="modalTitle"></h2>
+              <p id="modalCategory" class="property-category"></p>
+            </div>
+
+            <div class="price-section">
+              <div class="price-tag">
+                <span class="label">Price</span>
+                <h3 id="modalPrice"></h3>
+              </div>
+            </div>
+
+            <div class="features-grid">
+              <div class="feature-item">
+                <i class="fas fa-bed"></i>
+                <div>
+                  <span class="feature-label">Bedrooms</span>
+                  <span class="feature-value" id="modalBeds"></span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-bath"></i>
+                <div>
+                  <span class="feature-label">Bathrooms</span>
+                  <span class="feature-value" id="modalBaths"></span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-ruler"></i>
+                <div>
+                  <span class="feature-label">Area</span>
+                  <span class="feature-value" id="modalArea"></span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-star"></i>
+                <div>
+                  <span class="feature-label">Rating</span>
+                  <span class="feature-value" id="modalRating"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="description-section">
+              <h4>About This Property</h4>
+              <p id="modalDescription"></p>
+            </div>
+
+            <div class="amenities-section">
+              <h4>Key Features</h4>
+              <div class="amenities-grid" id="modalAmenities"></div>
+            </div>
+
+            <div class="location-section">
+              <h4>Location & Highlights</h4>
+              <p id="modalLocation"></p>
+            </div>
+
+            <div class="action-buttons">
+              <button class="btn-primary" id="savePropBtn">
+                <i class="fas fa-heart"></i> Save Property
+              </button>
+              <button class="btn-secondary" id="contactAgentBtn">
+                <i class="fas fa-phone"></i> Contact Agent
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>LuxeHome</h4>
+          <p>Your gateway to luxury real estate</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LuxeHome. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="e-commerce.js"></script>
+  </body>
+</html>
